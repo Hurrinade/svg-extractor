@@ -5,6 +5,11 @@
   let isExtractorActive = true;
   let hoveredSVG = null;
 
+  // Load saved state
+  chrome.storage.local.get(["extractorEnabled"], (result) => {
+    isExtractorActive = result.extractorEnabled !== false;
+  });
+
   // Function to get the full SVG content including all attributes
   function getSVGContent(svgElement) {
     // Clone the SVG to avoid modifying the original
