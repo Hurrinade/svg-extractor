@@ -5,12 +5,15 @@
   "description": "Extract and copy SVG content from any webpage by clicking on SVG elements",
   "permissions": ["activeTab", "storage"],
   "action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
-    }
+    },
+    "default_title": "SVG Extractor (Active) - Click to disable"
+  },
+  "background": {
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "icons/icon16.png",

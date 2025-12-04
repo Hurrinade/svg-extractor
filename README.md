@@ -7,8 +7,9 @@ A simple and elegant Chrome extension that allows you to extract SVG content fro
 - 🎯 **Click to Copy**: Simply click on any SVG element to copy its source code to your clipboard
 - 👁️ **Visual Feedback**: Hover over SVG elements to see them highlighted with a green outline
 - ✅ **Copy Confirmation**: Get instant visual confirmation when SVG code is copied
-- 🔄 **Toggle On/Off**: Enable or disable the extractor from the popup interface
+- 🔄 **Toggle On/Off**: Click the extension icon to enable or disable the extractor
 - 💾 **Persistent State**: Your enabled/disabled preference is saved across sessions
+- 🏷️ **Visual Status**: Badge shows "OFF" when disabled, clear when active
 
 ## Installation
 
@@ -20,12 +21,13 @@ A simple and elegant Chrome extension that allows you to extract SVG content fro
 
 ## Usage
 
-1. **Activate the Extension**: Click the SVG Extractor icon in your Chrome toolbar to open the popup
-2. **Ensure It's Enabled**: The toggle switch should be green (enabled by default)
-3. **Navigate to Any Webpage**: Go to any website with SVG elements
-4. **Hover Over SVGs**: Move your mouse over SVG elements - they will be highlighted with a green outline
-5. **Click to Copy**: Click on any highlighted SVG to copy its source code to your clipboard
-6. **Paste Anywhere**: Use Ctrl+V (Cmd+V on Mac) to paste the SVG code wherever you need it
+1. **Toggle the Extension**: Click the SVG Extractor icon in your Chrome toolbar to enable/disable it
+   - When active: No badge shown, tooltip says "SVG Extractor (Active) - Click to disable"
+   - When disabled: Red "OFF" badge shown, tooltip says "SVG Extractor (Disabled) - Click to enable"
+2. **Navigate to Any Webpage**: Go to any website with SVG elements
+3. **Hover Over SVGs**: Move your mouse over SVG elements - they will be highlighted with a green outline
+4. **Click to Copy**: Click on any highlighted SVG to copy its source code to your clipboard
+5. **Paste Anywhere**: Use Ctrl+V (Cmd+V on Mac) to paste the SVG code wherever you need it
 
 ## How It Works
 
@@ -33,7 +35,7 @@ The extension consists of several components:
 
 - **Content Script** (`content.js`): Runs on every webpage, detects SVG elements, handles hover effects, and manages clipboard copying
 - **Content Styles** (`content.css`): Provides visual feedback with hover outlines and copy animations
-- **Popup Interface** (`popup.html` + `popup.js`): Allows you to toggle the extractor on/off
+- **Background Service Worker** (`background.js`): Handles extension icon clicks and manages toggle state
 - **Manifest** (`manifest.json`): Defines extension permissions and configuration
 
 ## Permissions
